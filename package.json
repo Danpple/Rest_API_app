@@ -14,7 +14,7 @@
 		"mongoose": "^6.8.4"
 	},
 	"repository": {
-		"url": "https://github.com/freeCodeCamp/boilerplate-project-exercisetracker"
+		"url": "https://github.com/Danpple/Rest_API_app.git"
 	},
 	"license": "MIT",
 	"keywords": [
