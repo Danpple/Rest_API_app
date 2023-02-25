@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>PalmPay Quick Services</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./register.css'>
+</head>
+<body>
+    <div class="container">
+        <div id="register">
+            <h2>PalmPay</h2>
+            <form action="/api/users" method="post">
+                <h4>Register</h4>
+                <div class="inputbox">
+                    <input id="uname" type="text" name="username" required="required">
+                    <span>Username</span>
+                    <i></i>
+                </div>
+                <div class="inputbox">
+                    <input id="password" type="password" name="password" required="required">
+                    <span>Password</span>
+                    <i></i>
+                </div>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

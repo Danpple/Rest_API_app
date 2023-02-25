@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>PalmPay Quick Services</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./style.css'>
+</head>
+<body>
+    <div class="container">
+        <div id="default">
+            <h2>PalmPay</h2>
+            <h4>Quick Services</h4>
+            <div class="options">
+                <input type="submit" value="Purchase" id="purc">
+                <input type="submit" value="Withdraw" id="with">
+            </div>
+            <div class="links">
+                <a href="./register.html">Haven't Registered?</a>
+            </div>
+        </div>
+        <div id="purchase">
+            <h2>PalmPay</h2>
+            <form action="/api/purchase" method="post">
+                <div id="details">
+                    <h4>Purchase</h4>
+                    <div class="inputbox">
+                        <input id="uname" type="text" name="username" required="required">
+                        <span>Username</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input id="_id" type="text" name="_id" required="required">
+                        <span>Your ID</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input id="amount" type="text" name="amount" required="required">
+                        <span>Amount</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input id="desc" type="text" name="desc" required="false">
+                        <span>Description</span>
+                        <i></i>
+                    </div>
+                    <input type="next" value="Next" id="pur_pin">
+                </div>
+                <div id="pin_pur">
+                    <h3>Enter Password</h3>
+                    <div class="inputbox">
+                        <input id="password" type="password" name="password" required="required">
+                        <span>Password</span>
+                        <i></i>
+                    </div>
+                    <input type="submit" value="Proceed">
+                </div>
+            </form>
+        </div>
+        <div id="withdraw">
+            <h2>PalmPay</h2>
+            <form action="/api/withdraw" method="post">
+                <div id="details1">
+                    <h4>Withdraw</h4>
+                    <div class="inputbox">
+                        <input id="uname1" type="text" name="username1" required="required">
+                        <span>Username</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input id="_id1" type="text" name="_id1" required="required">
+                        <span>Your ID</span>
+                        <i></i>
+                    </div>
+                    <div class="inputbox">
+                        <input id="amount1" type="text" name="amount1" required="required">
+                        <span>Amount</span>
+                        <i></i>
+                    </div>
+                    <input type="next" value="Next" id="with_pin">
+                </div>
+                <div id="pin_with">
+                    <h3>Enter Pin</h3>
+                    <div class="inputbox">
+                        <input id="password" type="password" name="password" required="required">
+                        <span>Password</span>
+                        <i></i>
+                    </div>
+                    <input type="submit" value="Proceed">
+                </div>
+            </form>
+        </div>
+        <div id="receipt">
+            <div class="rec">
+                <h2>PalmPay</h2>
+                <h4><span id="actioned"></span> RECEIPT</h4>
+                <hr>
+                <div class="texts">
+                    <div class="left">
+                        <span>Name:</span>
+                        <span>Date:</span>
+                        <span>Amount:</span>
+                        <span>Description:</span>
+                    </div>
+                    <div class="right">
+                        <span id="name"></span>
+                        <span id="date"></span>
+                        <span id="amounts"></span>
+                        <span id="description"></span>
+                    </div>
+                </div>
+                <span id="result"></span>
+                <hr>
+                <button class="footer" href="#">Done</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // PAGES
+        let def = document.getElementById('default');
+        let purchase = document.getElementById('purchase');
+        let withdraw = document.getElementById('withdraw');
+        let rec = document.getElementById('receipt');
+        let details = document.getElementById('details');
+        let details1 = document.getElementById('details1');
+        let pin_pur = document.getElementById('pin_pur');
+        let pin_with = document.getElementById('pin_with');
+
+        // BUTTONS 
+        let pur = document.getElementById('purc');
+        let withd = document.getElementById('with');
+        let pur_pin = document.getElementById('pur_pin');
+        let with_pin = document.getElementById('with_pin');
+
+        // BUTTONS FUNCTIONS
+        pur.onclick = () => {
+            purchase.style.display = 'flex';
+            def.style.display = 'none';
+        };
+        withd.onclick = () => {
+            withdraw.style.display = 'flex';
+            def.style.display = 'none';
+        };
+        pur_pin.onclick = () => {
+            pin_pur.style.display = 'flex';
+            details.style.display = 'none';
+        };
+        with_pin.onclick = () => {
+            pin_with.style.display = 'flex';
+            details1.style.display = 'none';
+        };
+    </script>
+    <script src="./index.js"></script>
+</body>
+</html>
